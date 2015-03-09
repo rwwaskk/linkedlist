@@ -1,0 +1,12 @@
+---
+layout: home
+---
+
+
+{% assign index = true %}
+{% for post in paginator.posts %}
+{% assign content = post.content %}
+  <article>
+    {% include article.html %}
+  </article>
+{% endfor %}

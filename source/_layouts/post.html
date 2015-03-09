@@ -1,0 +1,20 @@
+{% include head.html %}
+<body id="post">
+
+  <div id="container">
+    <nav role="navigation" >{% include go_home.html %}</nav>
+    {% include article.html %}
+    {% include footer.html %}
+      <p class="meta">
+      {% if page.previous.url %}
+        <a class="basic-alignment left nav" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+      {% endif %}
+      {% if page.next.url %}
+        <a class="basic-alignment right nav" href="{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}} &raquo;</a>
+      {% endif %}
+    </p>
+  </div>
+  {% include bottom_scripts.html %}
+</body>
+</html>
+
