@@ -2,7 +2,7 @@
 
 Based on https://github.com/ivanjovanovic/ji-octopress-theme
 
-You can view the live theme [here] (http://www.unary.io).
+You can view the live theme [here] (https://www.unary.io).
 
 ### Install
 ```shell
@@ -12,3 +12,11 @@ $ rake install['linkedlist']
 $ rake generate && rake deploy
 ```
 
+### What's the difference?
+* Your name in a linked list! Dynamically drawn with html5 canvas.
+* Main navigation: blog, archive, about 
+* show previous/next blog on individual blog's page
+
+### To do
+* Make the theme responsive
+* Serve fonts locally
