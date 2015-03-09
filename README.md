@@ -15,7 +15,7 @@ $ rake generate && rake deploy
 ### What's the difference?
 * Your name in a linked list! Dynamically drawn with html5 canvas.
 * Main navigation: blog, archive, about 
-* show previous/next blog on individual blog's page
+* Show previous/next blog on individual blog's page
 
 ### To do
 * Make the theme responsive
