@@ -2,7 +2,7 @@
 
 Based on https://github.com/ivanjovanovic/ji-octopress-theme
 
-
+You can view the live theme [here] (http://www.unary.io).
 
 ### Install
 ```shell
