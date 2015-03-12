@@ -212,3 +212,38 @@ article {
 .sharing {
   margin-top: 20px;
 }
+
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 740px) {
+  #container {
+    width:500px;
+    padding: 20px 15px; 
+  }
+}                                                                                                     
+@media only screen and (max-width: 570px) {
+  #container {
+    width:300px;
+    padding: 20px 15px;
+    }
+}
+@media only screen and (max-width: 480px) {
+  #container {
+    width:200px;
+    padding: 20px 15px;
+    }}
+
+@media only screen and (max-width: 320px) {
+  #container {
+    width:100px;
+    padding: 20px 15px;
+    }}
+
+/** iPhone only **/
+@media screen and (max-device-width: 480px) {
+  #container {
+    width:200px;
+    padding: 20px 15px;
+  }
+}
+
