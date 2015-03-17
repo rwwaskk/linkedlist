@@ -16,7 +16,10 @@ $ rake generate && rake deploy
 * Your name in a linked list! Dynamically drawn with html5 canvas.
 * Main navigation: blog, archive, about 
 * Show previous/next blog on individual blog's page
+* Sticky footer
 
-### To do
-* Make the theme responsive
+### To do 
+* Make the theme responsive on iPhone 4
 * Serve fonts locally
+
+
