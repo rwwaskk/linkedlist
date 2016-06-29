@@ -1,16 +1,29 @@
-function LinkedListDrawer(name, canvas) {
+function LinkedListDrawer(name, canvas, maxCharSize) {
+  this.maxCharSize= maxCharSize;
   this.name = name;
   this.canvas = canvas;
 };
 
+function removeCanvas(canvas) {
+  canvas.remove();
+};
+
+function drawCanvas(name, canvas) {
+
+};
+
+
 LinkedListDrawer.prototype.draw = function() {
+  var canvas = this.canvas;
+  var name = this.name;
+  var maxCharSize = this.maxCharSize;
+
   //The this.name (up to 28 characters long, including white space)
   var length = this.name.length;
-  if (length>28){//Exceed character length limit, remove canvas
-      canvas.remove();
+  if (name.length > maxCharSize ){//Exceed character length limit, remove canvas
+      removeCanvas(canvas);
   }
   else{
-
 
     var context = canvas.getContext('2d');
 
@@ -42,7 +55,7 @@ LinkedListDrawer.prototype.draw = function() {
 
     canvas.height=mid_horizon+width/2+width/2.1+5;
 
-    for (var i=1;i<this.name.length+1;i++){
+    for (var i=1;i<name.length+1;i++){
 
       context.beginPath();
       context.strokeStyle='#F9BF3B';
@@ -55,7 +68,7 @@ LinkedListDrawer.prototype.draw = function() {
       context.lineTo(start+width/2,horizon+height);
 
       //if this is the last element
-      if (i==this.name.length){
+      if (i==name.length){
         context.moveTo(start+width/2,horizon+height);
         context.lineTo(start+width,horizon);
 
@@ -89,20 +102,18 @@ LinkedListDrawer.prototype.draw = function() {
 
       context.font = ' 15pt Calibri';
       context.fillStyle = '#859900';
-      context.fillText(this.name.charAt(name_counter), start+width/4+radius*0.81-radius-width/14, mid_horizon+width/2+width/2.1);
+      context.fillText(name.charAt(name_counter), start+width/4+radius*0.81-radius-width/14, mid_horizon+width/2+width/2.1);
 
       context.lineWidth=1;
       context.strokeStyle='#F9BF3B';
       context.stroke();
-      start+=width/2*2+interval;      
+      start+=width/2*2+interval;
       name_counter+=1;
     }
   }
 };
 
-
 var name = document.getElementById('name-helper').innerHTML;
 var canvas = document.getElementById('myCanvas');
-
-var myDrawer = new LinkedListDrawer(name, canvas);
+var myDrawer = new LinkedListDrawer(name, canvas, 28);
 myDrawer.draw();
