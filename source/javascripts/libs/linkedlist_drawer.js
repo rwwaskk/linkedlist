@@ -242,7 +242,10 @@ LinkedListDrawer.prototype.draw = function() {
   }
 };
 
-var name = document.getElementById('name-helper').innerHTML;
+var nameHelper = document.getElementById('name-helper');
 var canvas = document.getElementById('myCanvas');
-var myDrawer = new LinkedListDrawer(name, canvas);
-myDrawer.draw();
+if (nameHelper && canvas) {
+  var name = nameHelper.innerHTML;
+  var myDrawer = new LinkedListDrawer(name, canvas);
+  myDrawer.draw();
+}
