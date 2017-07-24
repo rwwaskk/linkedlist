@@ -14,11 +14,11 @@ $ rake generate && rake deploy
 
 ### What's the difference?
 * Your name in a linked list! Dynamically drawn with html5 canvas.
-* Main navigation: blog, archive, about 
+* Main navigation: blog, archive, about
 * Show previous/next blog on individual blog's page
 * Sticky footer
 
-### To do 
+### To do
 * Make the theme responsive on iPhone 4
 * Serve fonts locally
 

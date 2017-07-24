@@ -4,11 +4,14 @@ var Y_POS = 5;
 var MAX_CHAR_SIZE = 28;
 
 var THREE_QUARTERS = 0.75;
+var ONE_QUARTER = 0.25;
 var STARTING_ANGLE = 1.2 * Math.PI;
+var ARC_ANGLE = 0.81;
 var ENDING_ANGLE = 1 * Math.PI;
 var COUNTER_CLOCK_WISE = true;
 var FONT = '15pt Calibri';
 var FILL_STYLE = '#859900';
+
 /**
  * A drawer to draw the linked list
 
@@ -103,19 +106,19 @@ LinkedListDrawer.prototype.drawArc = function(x) {
   var radius = this.radius;
   this.context.stroke();
   this.context.beginPath();
-  this.context.arc(x + this.width / 4 + radius * 0.81,
+  this.context.arc(x + this.width * ONE_QUARTER + radius * ARC_ANGLE,
                    midY + this.width / 2,
                    radius,
                    STARTING_ANGLE,
                    ENDING_ANGLE,
                    COUNTER_CLOCK_WISE);
 
-  this.context.moveTo(x + this.width / 4 + radius * 0.81 - radius, midY + width / 2);
-  this.context.lineTo(x + this.width / 4 + radius * 0.81 - radius - this.oneFifthHeight,
+  this.context.moveTo(x + this.width * ONE_QUARTER + radius * ARC_ANGLE - radius, midY + width / 2);
+  this.context.lineTo(x + this.width * ONE_QUARTER + radius * ARC_ANGLE - radius - this.oneFifthHeight,
                       midY - this.oneFifthHeight + width / 2);
 
-  this.context.moveTo(x + this.width / 4 + radius * 0.81 - radius, midY + width / 2);
-  this.context.lineTo(x + this.width / 4 + radius * 0.81 - radius + this.oneFifthHeight,
+  this.context.moveTo(x + this.width * ONE_QUARTER + radius * ARC_ANGLE - radius, midY + width / 2);
+  this.context.lineTo(x + this.width * ONE_QUARTER + radius * ARC_ANGLE - radius + this.oneFifthHeight,
                       midY - this.oneFifthHeight + width / 2);
 };
 
@@ -133,7 +136,7 @@ LinkedListDrawer.prototype.drawName = function(x, nameCounter) {
   this.context.font = FONT;
   this.context.fillStyle = FILL_STYLE;
   this.context.fillText(name.charAt(nameCounter),
-                     x + width / 4 + radius * 0.81 - radius - width / 14 - 3,
+                     x + width * ONE_QUARTER + radius * ARC_ANGLE - radius - width / 14 - 3,
                      midY + width / 2 + width / 2.1);
 
   this.context.lineWidth = 1;
@@ -202,7 +205,7 @@ LinkedListDrawer.prototype.setParameters = function() {
     var oneFifthHeight = height / 5;
 
     // The distance between rectangles
-    var interval = width / 4;
+    var interval = width * ONE_QUARTER;
     var radius = THREE_QUARTERS * width;
     var textPos = width * 1.1;
 
